@@ -1,4 +1,6 @@
 
+#convert hex to base 64
+
 def hex_to_base_64(hex_string)
 	#interpret string as hex
 	hex_enc = [hex_string].pack('H*')
