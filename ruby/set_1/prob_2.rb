@@ -9,10 +9,11 @@
 def fixed_xor (str1, str2)
 	if (str1.length == str2.length)
 		result = (str1.hex^str2.hex).to_s(16)
+		return result
 	end
 end
 
-puts fixed_xor("1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965")
+# puts fixed_xor("1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965")
 
 
 
