@@ -1,27 +1,23 @@
 
- 
+str1 = "I go crazy when I hear a cymbal"
+xor_str = "ICE"
 
-untrusted_string = "0e3647e8592d35514a081243582536ed3de6734059001e3f535ce6271032"
-					"0e3647e8592d35514a081243582536ed3de6734059001e3f535ce6271032"
-
-#seems to stop after line 171
-
-
-#fixing invalid utf-8 in ruby
-# ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-# valid_string = ic.iconv(untrusted_string + ' ')[0..-2]
-
-valid_string = untrusted_string.encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => "?")
-
-puts valid_string
+s1 = str1.unpack("C*")
+s2 = xor_str.unpack("C*")
 
 
-require 'iconv' unless String.method_defined?(:encode)
+s3 = Array.new
+counter = 0
+max = s2.length
 
-if String.method_defined?(:encode)
-  file_contents.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-else
-  ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
-  file_contents = ic.iconv(file_contents)
+for i in 0...(s1.length)
+	
+	if (counter == max)
+		counter = 0
+	end
+
+	s3.push(s2[counter])
+	counter = counter+1
 end
+
 

@@ -22,14 +22,11 @@ def print_possible_messages(str1)
 
 		str2 = [str1].pack("H*") #hex decoding displayed in ascii 
 		str3 = i.chr*str2.length #char representing int value displayed in ascii 
-
 		result = str2^str3 #xor ascii strings	
-
 		# puts result
 		if (result.match regex)
 			puts result
 		end
-
 	end
 end
 
